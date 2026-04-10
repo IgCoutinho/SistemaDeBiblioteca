@@ -20,13 +20,23 @@ public class Livro implements Emprestavel {
 
     @Override
     public void devolver() {
-
     }
 
     @Override
     public boolean isDisponivel(boolean isDisponivel) {
         this.isDisponivel = isDisponivel;
         return isDisponivel;
+    }
+
+    public void imprime(){
+        System.out.println(this.titulo);
+        System.out.println(this.categoria);
+        System.out.println(this.autor.getNome());
+        if (this.isDisponivel){
+            System.out.println("Disponivel");
+        } else{
+            System.out.println("Indisponivel");
+        }
     }
 
     public String getTitulo() {
@@ -41,14 +51,7 @@ public class Livro implements Emprestavel {
         return categoria;
     }
 
-    public void imprime(){
-        System.out.println(this.titulo);
-        System.out.println(this.categoria);
-        System.out.println(this.autor.getNome());
-        if (this.isDisponivel){
-            System.out.println("Disponivel");
-        } else{
-            System.out.println("Indisponivel");
-        }
+    public boolean isGetDisponivel() {
+        return isDisponivel;
     }
 }
