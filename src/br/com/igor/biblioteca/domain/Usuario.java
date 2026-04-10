@@ -2,7 +2,7 @@ package br.com.igor.biblioteca.domain;
 
 public abstract class Usuario {
 
-    private String nome;
+    private final String nome;
     private Livro[] livrosEmprestados = new Livro[0];
     private int quantidadeLivros;
 
@@ -17,9 +17,6 @@ public abstract class Usuario {
         return nome;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
 
     public Livro[] getLivrosEmprestados() {
         return livrosEmprestados;

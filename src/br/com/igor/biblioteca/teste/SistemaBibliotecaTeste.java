@@ -14,7 +14,7 @@ public class SistemaBibliotecaTeste {
         Livro livro4 = new Livro("Brasil vs Inglaterra", autor, Categoria.FICCAO);
         Livro livro5 = new Livro("Feijao vs Arroz", autor, Categoria.FICCAO);
         Usuario user = new UsuarioComum("Igor");
-        Usuario user1 = new UsuarioPremium("Coutinho");
+        Usuario user1 = new UsuarioPremium("Francisco");
 
         System.out.println("\n== Teste Cadastro Livro ==");
         BibliotecaService.cadastrarLivro(livro);

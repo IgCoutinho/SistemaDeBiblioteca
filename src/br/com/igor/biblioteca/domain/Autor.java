@@ -2,13 +2,9 @@ package br.com.igor.biblioteca.domain;
 
 public class Autor {
 
-    private String nome;
+    private final String nome;
 
     public Autor(String nome) {
-        this.nome = nome;
-    }
-
-    public void setNome(String nome) {
         this.nome = nome;
     }
 

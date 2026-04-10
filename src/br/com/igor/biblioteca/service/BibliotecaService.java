@@ -31,15 +31,15 @@ public class BibliotecaService {
 
     public static void listarLivros(){
         System.out.println("== Livros Disponiveis ==");
-        for (int i = 0; i < livros.length ; i++) {
-            if (livros[i].isGetDisponivel()){
-                System.out.println("- " + livros[i].getTitulo());
+        for (Livro livro : livros) {
+            if (livro.isGetDisponivel()) {
+                System.out.println("- " + livro.getTitulo());
             }
         }
         System.out.println("== Livros Indisponiveis ==");
-        for (int i = 0; i < livros.length ; i++) {
-            if (!livros[i].isGetDisponivel()){
-                System.out.println("- " + livros[i].getTitulo());
+        for (Livro livro : livros) {
+            if (!livro.isGetDisponivel()) {
+                System.out.println("- " + livro.getTitulo());
             }
         }
     }
@@ -73,7 +73,7 @@ public class BibliotecaService {
             BibliotecaService.userDevolveLivro(usuario, livro);
             livro.setUsuarioAtual(null);
         } else {
-            System.out.println("Nao é possivel realizar essa acao, pois o livro ja pertence a outra conta!");
+            System.out.println("Nao é possivel realizar essa acao, pois o livro pertence a outra conta!");
         }
     }
 

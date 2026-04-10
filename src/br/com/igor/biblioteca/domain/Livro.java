@@ -2,9 +2,9 @@ package br.com.igor.biblioteca.domain;
 
 public class Livro implements Emprestavel {
 
-    private String titulo;
-    private Autor autor;
-    private Categoria categoria;
+    private final String titulo;
+    private final Autor autor;
+    private final Categoria categoria;
     private Usuario usuarioAtual;
     private boolean isDisponivel;
 
@@ -28,22 +28,6 @@ public class Livro implements Emprestavel {
     @Override
     public void isDisponivel(boolean isDisponivel) {
         this.isDisponivel = isDisponivel;
-    }
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-
-    public void setAutor(Autor autor) {
-        this.autor = autor;
-    }
-
-    public void setCategoria(Categoria categoria) {
-        this.categoria = categoria;
-    }
-
-    public void setDisponivel(boolean disponivel) {
-        isDisponivel = disponivel;
     }
 
     public String getTitulo() {
