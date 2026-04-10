@@ -102,12 +102,12 @@ br.com.igor.biblioteca
 
 ## Melhorias Futuras
 
-* Substituir arrays por List
-* Separar camada de apresentação (remover System.out do service)
-* Criar tratamento de exceções
-* Adicionar persistência (arquivo ou banco de dados)
-* Implementar testes automatizados (JUnit)
-* Criar interface gráfica ou API REST
+*Substituir arrays por Collections (List, Set)
+*Persistência de dados com banco (MySQL, PostgreSQL)
+*Criação de API REST com Spring Boot
+*Implementação de tratamento de exceções
+*Interface gráfica ou integração com frontend
+*Testes automatizados (JUnit)
 
 ---
 
