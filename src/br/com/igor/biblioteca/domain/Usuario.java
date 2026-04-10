@@ -17,7 +17,6 @@ public abstract class Usuario {
         return nome;
     }
 
-
     public Livro[] getLivrosEmprestados() {
         return livrosEmprestados;
     }
