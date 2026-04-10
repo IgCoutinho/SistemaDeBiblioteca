@@ -13,11 +13,24 @@ public class SistemaBibliotecaTeste {
 
         BibliotecaService.cadastrarLivro(livro);
         BibliotecaService.cadastrarUsuario(user);
+
+        System.out.println();
         BibliotecaService.emprestarLivro(user,livro);
         BibliotecaService.listarLivros();
+
         System.out.println();
         BibliotecaService.devolverLivro(user1, livro);
+
+        System.out.println();
         BibliotecaService.listarLivros();
+
+        System.out.println();
+        BibliotecaService.imprimeUsuario(user);
+        System.out.println();
+        BibliotecaService.imprimeUsuario(user1);
+
+        System.out.println();
+        BibliotecaService.imprimeLivro(livro);
 
     }
 }

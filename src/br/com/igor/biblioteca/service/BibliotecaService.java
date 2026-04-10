@@ -49,10 +49,16 @@ public class BibliotecaService {
         livro.setUsuarioAtual(usuario);
     }
 
-    public static void devolverLivro(Usuario usuario, Livro livro){
-        if (livro.getUsuarioAtual().getNome().equals(usuario.getNome())){
+    public static void devolverLivro(Usuario usuario, Livro livro) {
+        if (livro.getUsuarioAtual() == null) {
+            System.out.println("O livro já está disponível.");
+            return;
+        }
+
+        if (livro.getUsuarioAtual() == usuario) {
             usuario.devolverLivro(livro);
-        } else{
+            livro.setUsuarioAtual(null);
+        } else {
             System.out.println("Nao é possivel realizar essa acao, pois o livro nao pertence a essa conta!");
         }
     }
