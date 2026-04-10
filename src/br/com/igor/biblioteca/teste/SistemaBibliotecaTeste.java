@@ -10,7 +10,7 @@ public class SistemaBibliotecaTeste {
         Livro livro = new Livro("Noite de Lua", autor, Categoria.FICCAO);
         Livro livro1 = new Livro("KungFu", autor, Categoria.FICCAO);
         Livro livro2 = new Livro("Salve a Patria", autor, Categoria.FICCAO);
-        Livro livro3 = new Livro("Que a vida reine", autor, Categoria.FICCAO);
+        Livro livro3 = new Livro("Que a vida reine", autor, Categoria.HORROR);
         Livro livro4 = new Livro("Brasil vs Inglaterra", autor, Categoria.FICCAO);
         Livro livro5 = new Livro("Feijao vs Arroz", autor, Categoria.FICCAO);
         Usuario user = new UsuarioComum("Igor");
