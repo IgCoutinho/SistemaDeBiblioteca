@@ -4,11 +4,12 @@ public class UsuarioPremium extends Usuario{
 
     public UsuarioPremium(String nome) {
         super(nome);
-        this.setLivrosEmprestados(new Livro[7]);
+        this.setLivrosEmprestados(new Livro[this.getLimiteLivros()]);
     }
 
     @Override
-    public void getLimiteLivros() {
+    public int getLimiteLivros() {
+        return 5;
     }
 
 }

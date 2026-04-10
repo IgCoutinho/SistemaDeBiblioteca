@@ -11,7 +11,7 @@ public abstract class Usuario {
 
     }
 
-    public abstract void getLimiteLivros();
+    public abstract int getLimiteLivros();
 
     public String getNome() {
         return nome;

@@ -50,7 +50,7 @@ public class BibliotecaService {
     }
 
     public static void pegarLivro(Usuario usuario, Livro livro){
-        if (usuario.getLivrosEmprestados().length > usuario.getQuatidadeLivros()) {
+        if (usuario.getLimiteLivros() > usuario.getQuatidadeLivros()) {
             if (livro.isGetDisponivel()) {
                 usuario.getLivrosEmprestados()[usuario.getQuatidadeLivros()] = livro;
                 livro.emprestar();
