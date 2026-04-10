@@ -3,7 +3,7 @@ package br.com.igor.biblioteca.domain;
 public abstract class Usuario {
 
     private String nome;
-    private Livro[] livrosEmprestados = new Livro[2];
+    private Livro[] livrosEmprestados = new Livro[0];
     private int quantidadeLivros;
 
     public Usuario(String nome) {

@@ -40,6 +40,18 @@ public class Livro implements Emprestavel {
         }
     }
 
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public void setAutor(Autor autor) {
+        this.autor = autor;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
+
     public String getTitulo() {
         return titulo;
     }
