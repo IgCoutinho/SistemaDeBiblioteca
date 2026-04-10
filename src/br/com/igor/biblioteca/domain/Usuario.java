@@ -13,33 +13,6 @@ public abstract class Usuario {
 
     public abstract void getLimiteLivros();
 
-    public void pegarLivro(Livro livro){
-            if (livrosEmprestados.length > quantidadeLivros) {
-                if (livro.isGetDisponivel()) {
-                    this.livrosEmprestados[quantidadeLivros] = livro;
-                    livro.emprestar();
-                    this.quantidadeLivros += 1;
-                    System.out.println("Adicionando livro \"" + livro.getTitulo() + "\" na conta " + getNome() + " ...");
-                    System.out.println("Livro adicionado");
-                } else {
-                    System.out.println("O livro nao esta disponivel");
-                }
-            } else {
-                System.out.println("Nao é possivel adicionar livros");
-            }
-    }
-
-    public void devolverLivro(Livro livro){
-        if (!livro.isGetDisponivel() ){
-            this.livrosEmprestados = new Livro[]{};
-            livro.devolver();
-            this.quantidadeLivros -= 1;
-            System.out.println("Devolvendo livro...");
-            System.out.println("Livro devolvido");
-        }
-    }
-
-
     public String getNome() {
         return nome;
     }
@@ -58,5 +31,9 @@ public abstract class Usuario {
 
     public void setLivrosEmprestados(Livro[] livrosEmprestados) {
         this.livrosEmprestados = livrosEmprestados;
+    }
+
+    public void setQuantidadeLivros(int quantidadeLivros) {
+        this.quantidadeLivros = quantidadeLivros;
     }
 }

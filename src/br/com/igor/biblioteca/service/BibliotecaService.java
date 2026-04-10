@@ -45,21 +45,45 @@ public class BibliotecaService {
     }
 
     public static void emprestarLivro(Usuario usuario, Livro livro){
-        usuario.pegarLivro(livro);
+        pegarLivro(usuario, livro);
         livro.setUsuarioAtual(usuario);
+    }
+
+    public static void pegarLivro(Usuario usuario, Livro livro){
+        if (usuario.getLivrosEmprestados().length > usuario.getQuatidadeLivros()) {
+            if (livro.isGetDisponivel()) {
+                usuario.getLivrosEmprestados()[usuario.getQuatidadeLivros()] = livro;
+                livro.emprestar();
+                usuario.setQuantidadeLivros(usuario.getQuatidadeLivros()+1);
+                System.out.println("Adicionando livro \"" + livro.getTitulo() + "\" na conta " + usuario.getNome() + " ...");
+                System.out.println("Livro adicionado");
+            } else {
+                System.out.println("O livro nao esta disponivel");
+            }
+        } else {
+            System.out.println("Nao é possivel adicionar livros");
+        }
     }
 
     public static void devolverLivro(Usuario usuario, Livro livro) {
         if (livro.getUsuarioAtual() == null) {
             System.out.println("O livro já está disponível.");
-            return;
         }
-
         if (livro.getUsuarioAtual() == usuario) {
-            usuario.devolverLivro(livro);
+            BibliotecaService.userDevolveLivro(usuario, livro);
             livro.setUsuarioAtual(null);
         } else {
-            System.out.println("Nao é possivel realizar essa acao, pois o livro nao pertence a essa conta!");
+            System.out.println("Nao é possivel realizar essa acao, pois o livro ja pertence a outra conta!");
+        }
+    }
+
+    public static void userDevolveLivro(Usuario usuario, Livro livro){
+        if (!livro.isGetDisponivel() ){
+            usuario.setLivrosEmprestados(usuario.getLivrosEmprestados());
+            livro.devolver();
+            usuario.setQuantidadeLivros(usuario.getQuatidadeLivros()-1);
+            System.out.println("Devolvendo livro...");
+            System.out.println("Livro devolvido");
         }
     }
 
