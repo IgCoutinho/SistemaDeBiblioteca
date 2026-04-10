@@ -26,7 +26,7 @@ public class Main {
         BibliotecaService.emprestarLivro(user, livro1);
 
         System.out.println("\n=== TENTATIVA ERRADA ===");
-        BibliotecaService.devolverLivro(user2, livro1); // deveria falhar
+        BibliotecaService.devolverLivro(user2, livro1); // deve falhar
 
         System.out.println("\n=== DEVOLUÇÃO CORRETA ===");
         BibliotecaService.devolverLivro(user, livro1);
