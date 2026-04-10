@@ -30,7 +30,7 @@ public abstract class Usuario {
     }
 
     public void devolverLivro(Livro livro){
-        if (!livro.isGetDisponivel()){
+        if (!livro.isGetDisponivel() ){
             this.livrosEmprestados = new Livro[]{};
             livro.devolver();
             this.quantidadeLivros -= 1;

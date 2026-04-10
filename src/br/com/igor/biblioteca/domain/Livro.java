@@ -5,6 +5,7 @@ public class Livro implements Emprestavel {
     private String titulo;
     private Autor autor;
     private Categoria categoria;
+    private Usuario usuarioAtual;
     private boolean isDisponivel;
 
     public Livro(String titulo, Autor autor, Categoria categoria) {
@@ -29,6 +30,22 @@ public class Livro implements Emprestavel {
         this.isDisponivel = isDisponivel;
     }
 
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public void setAutor(Autor autor) {
+        this.autor = autor;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
+
+    public void setDisponivel(boolean disponivel) {
+        isDisponivel = disponivel;
+    }
+
     public String getTitulo() {
         return titulo;
     }
@@ -42,6 +59,18 @@ public class Livro implements Emprestavel {
     }
 
     public boolean isGetDisponivel() {
+        return isDisponivel;
+    }
+
+    public Usuario getUsuarioAtual() {
+        return usuarioAtual;
+    }
+
+    public void setUsuarioAtual(Usuario usuarioAtual) {
+        this.usuarioAtual = usuarioAtual;
+    }
+
+    public boolean isDisponivel() {
         return isDisponivel;
     }
 }

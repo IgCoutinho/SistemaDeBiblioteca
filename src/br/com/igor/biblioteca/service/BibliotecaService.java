@@ -5,41 +5,56 @@ import br.com.igor.biblioteca.domain.Usuario;
 
 public class BibliotecaService {
 
-    public static void listarLivros(Livro[] livros){
+    public static Livro[] livros = new Livro[0];
+    public static Usuario[] usuarios = new Usuario[0];
+
+    public static void cadastrarLivro(Livro livro) {
+        Livro[] novo = new Livro[livros.length + 1];
+        for (int i = 0; i < livros.length; i++) {
+            novo[i] = livros[i];
+        }
+        novo[livros.length] = livro;
+        livros = novo;
+        System.out.println("Livro \"" + livro.getTitulo() + "\" adicionado com sucesso!");
+    }
+
+    public static void cadastrarUsuario(Usuario usuario){
+        Usuario[] novosUsers = new Usuario[usuarios.length + 1];
+        for (int i = 0; i <usuarios.length; i++) {
+            novosUsers[i] = usuarios[i];
+        }
+        novosUsers[usuarios.length] = usuario;
+        usuarios = novosUsers;
+        System.out.println("Usuario \"" + usuario.getNome() + "\" adicionado com sucesso!");
+    }
+
+
+    public static void listarLivros(){
         System.out.println("== Livros Disponiveis ==");
         for (int i = 0; i < livros.length ; i++) {
             if (livros[i].isGetDisponivel()){
                 System.out.println((i+1) + "- " + livros[i].getTitulo());
-            } else{
-                return;
             }
         }
         System.out.println("== Livros Indisponiveis ==");
         for (int i = 0; i < livros.length ; i++) {
             if (!livros[i].isGetDisponivel()){
                 System.out.println((i+1) + "- " + livros[i].getTitulo());
-            } else{
-                return;
             }
         }
     }
 
-    public static void cadastrarLivro(Livro livro){
-        System.out.println("Adicionando Livro...");
-        System.out.println("Livro " + livro.getTitulo() + " adcionado com sucesso!");
-    }
-
-    public static void cadastrarUsuario(Usuario usuario){
-        System.out.println("Adicionando Usuario...");
-        System.out.println("Usuario " + usuario.getNome() + " adcionado com sucesso!");
-    }
-
     public static void emprestarLivro(Usuario usuario, Livro livro){
         usuario.pegarLivro(livro);
+        livro.setUsuarioAtual(usuario);
     }
 
     public static void devolverLivro(Usuario usuario, Livro livro){
-        usuario.devolverLivro(livro);
+        if (livro.getUsuarioAtual().getNome().equals(usuario.getNome())){
+            usuario.devolverLivro(livro);
+        } else{
+            System.out.println("Nao é possivel realizar essa acao, pois o livro nao pertence a essa conta!");
+        }
     }
 
     public static void imprimeUsuario(Usuario usuario){
