@@ -70,7 +70,4 @@ public class Livro implements Emprestavel {
         this.usuarioAtual = usuarioAtual;
     }
 
-    public boolean isDisponivel() {
-        return isDisponivel;
-    }
 }
