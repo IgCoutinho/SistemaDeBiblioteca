@@ -11,13 +11,17 @@ public class SistemaBibliotecaTeste {
         Usuario usuario = new UsuarioComum("Igor");
         Usuario usuario1 = new UsuarioComum("Cassandra");
 
-        usuario.pegarLivro(livros);
+        usuario.pegarLivro(livro);
         usuario.imprime();
         System.out.println();
 
-        usuario1.pegarLivro(livros);
+        usuario.devolverLivro(livro);
         System.out.println();
+        usuario.imprime();
 
+        usuario1.pegarLivro(livro);
+        System.out.println();
+        usuario1.imprime();
 
     }
 }

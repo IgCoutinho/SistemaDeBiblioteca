@@ -13,22 +13,25 @@ public abstract class Usuario {
 
     public abstract void getLimiteLivros();
 
-    public void pegarLivro(Livro[] livros){
-        for (int i = 0; i < livros.length ; i++) {
-            if (livros[i].isGetDisponivel()){
-                this.livrosEmprestados[i] = livros[i];
-                livros[i].isDisponivel(false);
+    public void pegarLivro(Livro livro){
+            if (livro.isGetDisponivel()){
+                this.livrosEmprestados[quatidadeLivros] = livro;
+                livro.isDisponivel(false);
                 this.quatidadeLivros += 1;
             } else {
                 System.out.println("O livro nao esta disponivel");
             }
-        }
     }
 
-    public void devolverLivro(Livro[] livros){
-        for (int i = 0; i < livros.length ; i++) {
-            livros[i] = this.livrosEmprestados[i];
-            livros[i].isDisponivel(true);
+    public void devolverLivro(Livro livro){
+        if (!livro.isGetDisponivel()){
+            this.livrosEmprestados = new Livro[]{};
+            livro.isDisponivel(true);
+            this.quatidadeLivros -= 1;
+            System.out.println("Devolvendo livro...");
+            System.out.println("Livro devolvido");
+        } else {
+            System.out.println("O livro nao esta disponivel");
         }
     }
 
@@ -57,7 +60,7 @@ public abstract class Usuario {
             for (Livro livros : livrosEmprestados) {
                 System.out.println("- " + livros.getTitulo());
             }
-        } else{
+        } else {
             System.out.println("-- SEUS LIVROS --");
             System.out.println("Nao há livros cadastrados");
         }
