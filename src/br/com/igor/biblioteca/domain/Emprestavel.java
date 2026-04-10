@@ -4,6 +4,8 @@ public interface Emprestavel {
 
     void emprestar();
     void devolver();
-    boolean isDisponivel(boolean isDisponivel);
+
+    default void isDisponivel(boolean isDisponivel) {
+    }
 
 }

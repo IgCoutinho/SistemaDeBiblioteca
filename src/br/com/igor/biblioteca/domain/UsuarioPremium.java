@@ -4,6 +4,7 @@ public class UsuarioPremium extends Usuario{
 
     public UsuarioPremium(String nome) {
         super(nome);
+        this.setLivrosEmprestados(new Livro[7]);
     }
 
     @Override

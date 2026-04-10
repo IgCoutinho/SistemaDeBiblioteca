@@ -25,9 +25,8 @@ public class Livro implements Emprestavel {
     }
 
     @Override
-    public boolean isDisponivel(boolean isDisponivel) {
+    public void isDisponivel(boolean isDisponivel) {
         this.isDisponivel = isDisponivel;
-        return isDisponivel;
     }
 
     public void imprime(){
