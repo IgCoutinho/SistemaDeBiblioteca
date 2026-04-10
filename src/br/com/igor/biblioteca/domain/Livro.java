@@ -7,11 +7,11 @@ public class Livro implements Emprestavel {
     private Categoria categoria;
     private boolean isDisponivel;
 
-    public Livro(String titulo, Autor autor, Categoria categoria, boolean isDisponivel) {
+    public Livro(String titulo, Autor autor, Categoria categoria) {
         this.titulo = titulo;
         this.autor = autor;
         this.categoria = categoria;
-        this.isDisponivel = isDisponivel;
+        this.isDisponivel = true;
     }
 
     @Override

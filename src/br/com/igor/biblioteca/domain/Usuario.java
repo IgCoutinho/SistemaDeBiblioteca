@@ -3,21 +3,23 @@ package br.com.igor.biblioteca.domain;
 public abstract class Usuario {
 
     private String nome;
-    private Livro[] livrosEmprestados = new Livro[1];
-    private int quatidadeLivros;
+    private Livro[] livrosEmprestados = new Livro[3];
+    private int quantidadeLivros;
 
     public Usuario(String nome) {
         this.nome = nome;
 
     }
 
-    public abstract void getLimiteLivros();
+    public abstract int getLimiteLivros();
 
     public void pegarLivro(Livro livro){
             if (livro.isGetDisponivel()){
-                this.livrosEmprestados[quatidadeLivros] = livro;
+                this.livrosEmprestados[quantidadeLivros] = livro;
                 livro.isDisponivel(false);
-                this.quatidadeLivros += 1;
+                this.quantidadeLivros += 1;
+                System.out.println("Adicionando livro \"" + livro.getTitulo() + "\" na conta " + getNome() + " ...");
+                System.out.println("Livro adicionado");
             } else {
                 System.out.println("O livro nao esta disponivel");
             }
@@ -27,12 +29,30 @@ public abstract class Usuario {
         if (!livro.isGetDisponivel()){
             this.livrosEmprestados = new Livro[]{};
             livro.isDisponivel(true);
-            this.quatidadeLivros -= 1;
+            this.quantidadeLivros -= 1;
             System.out.println("Devolvendo livro...");
             System.out.println("Livro devolvido");
         } else {
             System.out.println("O livro nao esta disponivel");
         }
+    }
+
+    public void imprime(){
+        System.out.println("----------------------");
+        System.out.println("Usuario: " + this.nome);
+        System.out.println("----------------------");
+        if (this.quantidadeLivros > 0) {
+            System.out.println("-- SEUS LIVROS --");
+            for (int i = 0; i < quantidadeLivros; i++) {
+                System.out.println((i+1) + "- " + livrosEmprestados[i].getTitulo());
+            }
+        } else {
+            System.out.println("-- SEUS LIVROS --");
+            System.out.println("Nao há livros cadastrados");
+        }
+        System.out.println("----------------------");
+        System.out.println("Quatidade de livros: " + this.quantidadeLivros);
+        System.out.println("----------------------");
     }
 
     public String getNome() {
@@ -48,24 +68,7 @@ public abstract class Usuario {
     }
 
     public int getQuatidadeLivros() {
-        return quatidadeLivros;
+        return quantidadeLivros;
     }
 
-    public void imprime(){
-        System.out.println("----------------------");
-        System.out.println("Usuario: " + this.nome);
-        System.out.println("----------------------");
-        if (livrosEmprestados != null){
-            System.out.println("-- SEUS LIVROS --");
-            for (Livro livros : livrosEmprestados) {
-                System.out.println("- " + livros.getTitulo());
-            }
-        } else {
-            System.out.println("-- SEUS LIVROS --");
-            System.out.println("Nao há livros cadastrados");
-        }
-        System.out.println("----------------------");
-        System.out.println("Quatidade de livros: " + this.quatidadeLivros);
-        System.out.println("----------------------");
-    }
 }

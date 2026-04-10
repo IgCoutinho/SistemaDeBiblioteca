@@ -7,8 +7,8 @@ public class UsuarioPremium extends Usuario{
     }
 
     @Override
-    public void getLimiteLivros() {
-
+    public int getLimiteLivros() {
+        return 0;
     }
 
 }

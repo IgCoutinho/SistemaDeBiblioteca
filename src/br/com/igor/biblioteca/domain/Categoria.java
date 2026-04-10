@@ -4,5 +4,5 @@ public enum Categoria {
     FICCAO,
     ROMANCE,
     HORROR,
-    HISOTIRA
+    HISTORIA
 }
