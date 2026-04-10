@@ -102,12 +102,12 @@ br.com.igor.biblioteca
 
 ## Melhorias Futuras
 
-*Substituir arrays por Collections (List, Set)
-*Persistência de dados com banco (MySQL, PostgreSQL)
-*Criação de API REST com Spring Boot
-*Implementação de tratamento de exceções
-*Interface gráfica ou integração com frontend
-*Testes automatizados (JUnit)
+* Substituir arrays por Collections (List, Set)
+* Persistência de dados com banco (MySQL, PostgreSQL)
+* Criação de API REST com Spring Boot
+* Implementação de tratamento de exceções
+* Interface gráfica ou integração com frontend
+* Testes automatizados (JUnit)
 
 ---
 
