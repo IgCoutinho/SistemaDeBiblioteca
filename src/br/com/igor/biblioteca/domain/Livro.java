@@ -7,9 +7,15 @@ public class Livro implements Emprestavel {
     private Categoria categoria;
     private boolean isDisponivel;
 
+    public Livro(String titulo, Autor autor, Categoria categoria, boolean isDisponivel) {
+        this.titulo = titulo;
+        this.autor = autor;
+        this.categoria = categoria;
+        this.isDisponivel = isDisponivel;
+    }
+
     @Override
     public void emprestar() {
-
     }
 
     @Override
@@ -18,8 +24,31 @@ public class Livro implements Emprestavel {
     }
 
     @Override
-    public boolean isDisponivel() {
-        return false;
+    public boolean isDisponivel(boolean isDisponivel) {
+        this.isDisponivel = isDisponivel;
+        return isDisponivel;
     }
 
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public Autor getAutor() {
+        return autor;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void imprime(){
+        System.out.println(this.titulo);
+        System.out.println(this.categoria);
+        System.out.println(this.autor.getNome());
+        if (this.isDisponivel){
+            System.out.println("Disponivel");
+        } else{
+            System.out.println("Indisponivel");
+        }
+    }
 }

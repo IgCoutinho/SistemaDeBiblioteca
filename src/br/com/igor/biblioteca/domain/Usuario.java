@@ -6,12 +6,25 @@ public abstract class Usuario {
     private Livro[] livrosEmprestados;
     private int quatidadeLivros;
 
+    public Usuario(String nome, Livro[] livrosEmprestados, int quatidadeLivros) {
+        this.nome = nome;
+        this.livrosEmprestados = livrosEmprestados;
+        this.quatidadeLivros = quatidadeLivros;
+    }
+
     public abstract void getLimiteLivros();
 
-    public void pegarLivro(){
+    public void pegarLivro(Livro[] livrosEmprestados){
+        for (int i = 0; i < livrosEmprestados.length ; i++) {
+            this.livrosEmprestados[i] = livrosEmprestados[i];
+            livrosEmprestados[i].isDisponivel(false);
+        }
     }
 
     public void devolverLivro(){
+        for (int i = 0; i < livrosEmprestados.length ; i++) {
+            this.livrosEmprestados[i] = livrosEmprestados[i];
+        }
     }
 
     public String getNome() {
