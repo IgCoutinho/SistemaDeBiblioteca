@@ -2,8 +2,8 @@ package br.com.igor.biblioteca.domain;
 
 public class UsuarioPremium extends Usuario{
 
-    public UsuarioPremium(String nome, Livro[] livrosEmprestados, int quatidadeLivros) {
-        super(nome, livrosEmprestados, quatidadeLivros);
+    public UsuarioPremium(String nome, Livro[] livrosEmprestados) {
+        super(nome, livrosEmprestados);
     }
 
     @Override
