@@ -33,13 +33,13 @@ public class BibliotecaService {
         System.out.println("== Livros Disponiveis ==");
         for (int i = 0; i < livros.length ; i++) {
             if (livros[i].isGetDisponivel()){
-                System.out.println((i+1) + "- " + livros[i].getTitulo());
+                System.out.println("- " + livros[i].getTitulo());
             }
         }
         System.out.println("== Livros Indisponiveis ==");
         for (int i = 0; i < livros.length ; i++) {
             if (!livros[i].isGetDisponivel()){
-                System.out.println((i+1) + "- " + livros[i].getTitulo());
+                System.out.println("- " + livros[i].getTitulo());
             }
         }
     }
