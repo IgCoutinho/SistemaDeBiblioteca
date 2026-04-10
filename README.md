@@ -123,4 +123,4 @@ Projeto desenvolvido com fins educacionais para praticar:
 
 ## Autor
 
-Igor Coutinho
+Igor Ferreira Coutinho
