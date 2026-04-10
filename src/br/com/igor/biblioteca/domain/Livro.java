@@ -16,10 +16,12 @@ public class Livro implements Emprestavel {
 
     @Override
     public void emprestar() {
+        isDisponivel(false);
     }
 
     @Override
     public void devolver() {
+        isDisponivel(true);
     }
 
     @Override

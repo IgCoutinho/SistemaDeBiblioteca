@@ -3,7 +3,7 @@ package br.com.igor.biblioteca.domain;
 public abstract class Usuario {
 
     private String nome;
-    private Livro[] livrosEmprestados = new Livro[3];
+    private Livro[] livrosEmprestados = new Livro[2];
     private int quantidadeLivros;
 
     public Usuario(String nome) {
@@ -11,24 +11,28 @@ public abstract class Usuario {
 
     }
 
-    public abstract int getLimiteLivros();
+    public abstract void getLimiteLivros();
 
     public void pegarLivro(Livro livro){
-            if (livro.isGetDisponivel()){
-                this.livrosEmprestados[quantidadeLivros] = livro;
-                livro.isDisponivel(false);
-                this.quantidadeLivros += 1;
-                System.out.println("Adicionando livro \"" + livro.getTitulo() + "\" na conta " + getNome() + " ...");
-                System.out.println("Livro adicionado");
+            if (livrosEmprestados.length > quantidadeLivros) {
+                if (livro.isGetDisponivel()) {
+                    this.livrosEmprestados[quantidadeLivros] = livro;
+                    livro.emprestar();
+                    this.quantidadeLivros += 1;
+                    System.out.println("Adicionando livro \"" + livro.getTitulo() + "\" na conta " + getNome() + " ...");
+                    System.out.println("Livro adicionado");
+                } else {
+                    System.out.println("O livro nao esta disponivel");
+                }
             } else {
-                System.out.println("O livro nao esta disponivel");
+                System.out.println("Nao é possivel adicionar livros");
             }
     }
 
     public void devolverLivro(Livro livro){
         if (!livro.isGetDisponivel()){
             this.livrosEmprestados = new Livro[]{};
-            livro.isDisponivel(true);
+            livro.devolver();
             this.quantidadeLivros -= 1;
             System.out.println("Devolvendo livro...");
             System.out.println("Livro devolvido");
@@ -71,4 +75,7 @@ public abstract class Usuario {
         return quantidadeLivros;
     }
 
+    public void setLivrosEmprestados(Livro[] livrosEmprestados) {
+        this.livrosEmprestados = livrosEmprestados;
+    }
 }

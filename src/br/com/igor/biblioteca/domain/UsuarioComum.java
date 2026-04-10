@@ -4,10 +4,10 @@ public class UsuarioComum extends Usuario{
 
     public UsuarioComum(String nome) {
         super(nome);
+        this.setLivrosEmprestados(new Livro[3]);
     }
 
     @Override
-    public int getLimiteLivros() {
-        return 0;
+    public void getLimiteLivros() {
     }
 }
