@@ -36,28 +36,9 @@ public abstract class Usuario {
             this.quantidadeLivros -= 1;
             System.out.println("Devolvendo livro...");
             System.out.println("Livro devolvido");
-        } else {
-            System.out.println("O livro nao esta disponivel");
         }
     }
 
-    public void imprime(){
-        System.out.println("----------------------");
-        System.out.println("Usuario: " + this.nome);
-        System.out.println("----------------------");
-        if (this.quantidadeLivros > 0) {
-            System.out.println("-- SEUS LIVROS --");
-            for (int i = 0; i < quantidadeLivros; i++) {
-                System.out.println((i+1) + "- " + livrosEmprestados[i].getTitulo());
-            }
-        } else {
-            System.out.println("-- SEUS LIVROS --");
-            System.out.println("Nao há livros cadastrados");
-        }
-        System.out.println("----------------------");
-        System.out.println("Quatidade de livros: " + this.quantidadeLivros);
-        System.out.println("----------------------");
-    }
 
     public String getNome() {
         return nome;
