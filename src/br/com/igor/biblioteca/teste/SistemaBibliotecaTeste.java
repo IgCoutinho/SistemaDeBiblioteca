@@ -25,6 +25,7 @@ public class SistemaBibliotecaTeste {
         BibliotecaService.cadastrarLivro(livro5);
         System.out.println("\n== Teste Cadastro User ==");
         BibliotecaService.cadastrarUsuario(user);
+        BibliotecaService.cadastrarUsuario(user1);
 
         System.out.println("\n== Teste Emprestimo Livro ==");
         BibliotecaService.emprestarLivro(user,livro);
@@ -39,6 +40,9 @@ public class SistemaBibliotecaTeste {
 
         System.out.println("\n== Teste Listar Livro ==");
         BibliotecaService.listarLivros();
+
+        System.out.println("\n== Teste Listar Usuarios ==");
+        BibliotecaService.listarUsers();
 
         System.out.println("\n== Teste Status User ==");
         BibliotecaService.imprimeUsuario(user);

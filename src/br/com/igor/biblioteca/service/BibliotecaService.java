@@ -44,6 +44,13 @@ public class BibliotecaService {
         }
     }
 
+    public static void listarUsers(){
+        System.out.println("== Usuarios Cadastrados ==");
+        for (Usuario usuario : usuarios) {
+            System.out.println("- " + usuario.getNome());
+        }
+    }
+
     public static void emprestarLivro(Usuario usuario, Livro livro){
         pegarLivro(usuario, livro);
         livro.setUsuarioAtual(usuario);

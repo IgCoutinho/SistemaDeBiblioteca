@@ -13,7 +13,7 @@ public class Main {
 
         Livro livro1 = new Livro("Dom Casmurro", autor, Categoria.ROMANCE);
         Livro livro2 = new Livro("Memórias Póstumas", autor, Categoria.FICCAO);
-        Livro livro3 = new Livro("Os Cinco Aneis", autor, Categoria.HISTORIA);
+        Livro livro3 = new Livro("Os Cinco Aneis", autor1, Categoria.HISTORIA);
 
         Usuario user = new UsuarioComum("Igor");
         Usuario user2 = new UsuarioPremium("Francisco");
