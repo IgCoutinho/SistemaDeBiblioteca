@@ -8,7 +8,6 @@ public abstract class Usuario {
 
     public Usuario(String nome) {
         this.nome = nome;
-
     }
 
     public abstract int getLimiteLivros();

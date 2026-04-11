@@ -114,7 +114,7 @@ public class BibliotecaService {
     public static void imprimeLivro(Livro livro){
         System.out.println("Livro: " + livro.getTitulo());
         System.out.println("Categoria: " + livro.getCategoria());
-        System.out.println("Autor" + livro.getAutor().getNome());
+        System.out.println("Autor: " + livro.getAutor().getNome());
         if (livro.isGetDisponivel()){
             System.out.println("Situacao: Disponivel");
         } else{

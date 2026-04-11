@@ -12,7 +12,7 @@ public class SistemaBibliotecaTeste {
         Livro livro2 = new Livro("Salve a Patria", autor, Categoria.FICCAO);
         Livro livro3 = new Livro("Que a vida reine", autor, Categoria.HORROR);
         Livro livro4 = new Livro("Brasil vs Inglaterra", autor, Categoria.FICCAO);
-        Livro livro5 = new Livro("Feijao vs Arroz", autor, Categoria.FICCAO);
+        Livro livro5 = new Livro("Feijao vs Arroz", autor, Categoria.ROMANCE);
         Usuario user = new UsuarioComum("Igor");
         Usuario user1 = new UsuarioPremium("Francisco");
 
@@ -52,6 +52,8 @@ public class SistemaBibliotecaTeste {
 
         System.out.println("\n== Teste Status Livro ==");
         BibliotecaService.imprimeLivro(livro);
+        System.out.println("\n== Teste Status Livro ==");
+        BibliotecaService.imprimeLivro(livro5);
 
     }
 }
