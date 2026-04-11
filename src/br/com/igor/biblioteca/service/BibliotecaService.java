@@ -53,14 +53,13 @@ public class BibliotecaService {
 
     public static void emprestarLivro(Usuario usuario, Livro livro){
         pegarLivro(usuario, livro);
-        livro.setUsuarioAtual(usuario);
     }
 
     public static void pegarLivro(Usuario usuario, Livro livro){
         if (usuario.getLimiteLivros() > usuario.getQuatidadeLivros()) {
             if (livro.isGetDisponivel()) {
                 usuario.getLivrosEmprestados()[usuario.getQuatidadeLivros()] = livro;
-                livro.emprestar();
+                livro.emprestar(usuario);
                 usuario.setQuantidadeLivros(usuario.getQuatidadeLivros()+1);
                 System.out.println("Adicionando livro \"" + livro.getTitulo() + "\" na conta " + usuario.getNome() + " ...");
                 System.out.println("Livro adicionado");
@@ -87,7 +86,7 @@ public class BibliotecaService {
     public static void userDevolveLivro(Usuario usuario, Livro livro){
         if (!livro.isGetDisponivel() ){
             usuario.setLivrosEmprestados(usuario.getLivrosEmprestados());
-            livro.devolver();
+            livro.devolver(usuario);
             usuario.setQuantidadeLivros(usuario.getQuatidadeLivros()-1);
             System.out.println("Devolvendo livro...");
             System.out.println("Livro devolvido");

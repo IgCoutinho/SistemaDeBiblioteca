@@ -16,12 +16,14 @@ public class Livro implements Emprestavel {
     }
 
     @Override
-    public void emprestar() {
+    public void emprestar(Usuario user) {
+        this.usuarioAtual = user;
         isDisponivel(false);
     }
 
     @Override
-    public void devolver() {
+    public void devolver(Usuario user) {
+        this.usuarioAtual = user;
         isDisponivel(true);
     }
 
